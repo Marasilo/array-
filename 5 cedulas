@@ -1,0 +1,117 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define ARRAY_SIZE 100
+
+#define ANNO_ACTUAL 2022
+#define LARGO_NOMBRE 50
+#define LARGO_APELLIDO 50
+#define LARGO_NACIONALIDAD 50
+#define LARGO_OCUPACION 50
+#define LARGO_ESTADO_CIVIL 30
+#define LARGO_GENERO 2
+#define LARGO_LUGARNACIMIENTO 50
+#define LARGO_LUGARNACIMIENTO2 50
+
+
+struct lugarnacimiento{
+char lugarnacimiento [LARGO_LUGARNACIMIENTO + 1];
+char lugarnacimiento2 [LARGO_LUGARNACIMIENTO2 + 1];
+};
+
+struct fecha{
+int dia;
+int mes;
+int anno;
+};
+
+struct genero{
+char genero [LARGO_GENERO + 1];
+};
+
+struct nacionalidad{
+char nacionalidad[LARGO_NACIONALIDAD + 1];
+};
+
+struct estado_civil{
+char estado_civil[LARGO_ESTADO_CIVIL + 1];
+};
+
+struct ocupacion {
+char ocupacion[LARGO_OCUPACION + 1];
+};
+
+struct persona{
+char nombre[LARGO_NOMBRE + 1];
+char apellido[LARGO_APELLIDO + 1];
+};
+
+struct numerocedula{
+int cedula;
+};
+
+struct cedula {
+struct numerocedula c[5];
+struct persona p[5];
+struct fecha fecha_nacimiento[5];
+struct nacionalidad n[5];
+struct ocupacion o[5];
+struct estado_civil es[5];
+struct genero g[5];
+struct lugarnacimiento lu[5];
+};
+
+
+int main(int argc, char* argv[]) {
+ struct cedula c[5]; 
+  int i;
+  int b;
+  int change;
+int n;
+int a[ARRAY_SIZE];
+int buf;
+time_t seed;
+
+   seed = 0;
+  srand(time(&seed));
+  n = sizeof(a) / sizeof(*a);
+  
+printf("Ingrese los datos de cedula: \n ");  
+for(i=0;i<5;i++){
+printf("\nCedula:");    
+scanf("%d",&c[i].c->cedula);
+
+printf("Ingrese el nombre y Apellido: \n ");
+  
+scanf("%s" , &c[i].p->nombre);
+scanf("%s",&c[i].p->apellido);
+
+ printf("\n Ingrese su fecha de nacimiento:");
+  
+scanf("%d" ,&c[i].fecha_nacimiento->dia);
+scanf("%d" ,&c[i].fecha_nacimiento->mes);
+scanf("%d" ,&c[i].fecha_nacimiento->anno);
+
+printf("\n Ingrese su Nacionalidad: ");
+  
+scanf("%d",&c[i].n->nacionalidad);
+
+printf("\n Ingrese su Ocupacion: ");
+  
+scanf("%s", &c[i].o->ocupacion);
+
+printf("\n Ingrese su Estado civil:");
+  
+scanf("%s",&c[i].es->estado_civil);
+
+printf("\n Ingrese su genero (Solo puede ingresar M para masculino y F para Femenino:");
+  
+scanf("%s", &c[i].g->genero);
+ 
+printf("\n Ingrese su lugar de nacimiento: ");
+  
+scanf("%s",&c[i].lu->lugarnacimiento);
+scanf("%s",&c[i].lu->lugarnacimiento2);
+  }
+  
+  }
